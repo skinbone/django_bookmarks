@@ -7,11 +7,11 @@
   </title>
 
   {% load staticfiles %}
-  <link rel="stylesheet" type="text/css" href=" {% static "css/style1.css" %} "   />
+  <link rel="stylesheet" type="text/css" href=" {% static "css/style1.css" %} "/>
 
   {% load static %}
   {% get_static_prefix as STATIC_PREFIX %}
-  <link rel="stylesheet"  type="text/css" href="{{ STATIC_PREFIX }}css/style1.css"  />
+  <link rel="stylesheet"  type="text/css" href="{{ STATIC_PREFIX }}css/style1.css" />
 </head>
 
 <body>
@@ -21,8 +21,8 @@
       welcome {{ user.username }}
       (<a href="/logout">logout</a>)
     {% else %}
-      <a href="/login/">login</a> |
-      <a href="/register/">register</a>
+      <a href="/login">login</a> |
+      <a href="/register">register</a>
     {% endif %}
   </div>
   <h1>{% block head %}{% endblock %}</h1>

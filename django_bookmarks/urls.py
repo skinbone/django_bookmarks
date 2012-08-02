@@ -2,9 +2,6 @@ from django.conf.urls import patterns, include, url
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.views.generic.base import TemplateView
 
-
-#from bookmarks.views import *
-
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
@@ -21,7 +18,7 @@ urlpatterns = patterns('',
     #url(r'^login/$', 'bookmarks.views.login'),
     url(r'^login/$', 'django.contrib.auth.views.login'),
 #    url(r'^login/$', 'django.contrib.auth.views.login', {'template_name': 'login.html'}),
-#    url(r'logout/$', 'django.contrib.auth.views.logout_then_login'),
+#    url(r'^logout/$', 'django.contrib.auth.views.logout_then_login'),
     url(r'^logout/$', 'bookmarks.views.logout_view'),
     url(r'^change-password/$', 'django.contrib.auth.views.password_change'),
     url(r'^password-changed/$', 'django.contrib.auth.views.password_change_done'),

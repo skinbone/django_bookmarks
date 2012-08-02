@@ -10,7 +10,7 @@ class BookmarkAdmin(admin.ModelAdmin):
 #        (None,               {'fields': ['question']}),
 #        ('Date information', {'fields': ['pub_date'], 'classes': ['collapse']}),
 #    ]
-#    inlines = [ChoiceInline]
+#    inlines = [BookmarkInline]
 #    list_display = ('question', 'pub_date', 'was_published_recently')
 #    list_filter = ['pub_date']
 #    search_fields = ['question']
