@@ -9,7 +9,7 @@ ADMINS = (
 
 MANAGERS = ADMINS
 LOGIN_URL = '/login/'
-#LOGIN_REDIRECT_URL = '/frontend/'
+LOGIN_REDIRECT_URL = '/'
 #LOGOUT_URL = '/logout/'
 
 

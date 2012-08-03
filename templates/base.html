@@ -5,21 +5,25 @@
   <title>Django Bookmarks |
     {% block title %}{% endblock %}
   </title>
-
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style1.css"/>
+  {% comment %}
+  {# 如何处理静态文件 #}
   {% load staticfiles %}
   <link rel="stylesheet" type="text/css" href=" {% static "css/style1.css" %} "/>
 
   {% load static %}
   {% get_static_prefix as STATIC_PREFIX %}
   <link rel="stylesheet"  type="text/css" href="{{ STATIC_PREFIX }}css/style1.css" />
+  {% endcomment %}
 </head>
 
 <body>
   <div id="nav">
     <a href="/">home</a> |
     {% if user.is_authenticated %}
-      welcome {{ user.username }}
-      (<a href="/logout">logout</a>)
+      <a href ="/user/{{ user.username }}" >{{ user.username }}</a>
+     | <a href="/logout">logout</a>
     {% else %}
       <a href="/login">login</a> |
       <a href="/register">register</a>

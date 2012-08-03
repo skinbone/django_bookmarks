@@ -3,7 +3,6 @@ import re
 from django import forms
 from django.contrib.auth.models import User
 
-
 class RegistrationForm(forms.Form):
   username = forms.CharField(label=u'Username', max_length=30)
   email = forms.EmailField(label=u'Email')
@@ -35,3 +34,21 @@ class RegistrationForm(forms.Form):
     except User.DoesNotExist:
       return username
     raise forms.ValidationError('Username is already taken.')
+
+
+class BookmarkSaveForm(forms.Form):
+    url = forms.URLField(
+        label=u'URL',
+        widget=forms.TextInput(attrs={'size': 64})
+    )
+    title = forms.CharField(
+        label=u'Title',
+        widget=forms.TextInput(attrs={'size': 64})
+    )
+    tags = forms.CharField(
+        label=u'Tags',
+        required=False,
+        widget=forms.TextInput(attrs={'size': 64})
+    )
+
+

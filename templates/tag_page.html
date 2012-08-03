@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block title %}Tag: {{ tagname }}{% endblock %}
+{% block head %}Bookmarks for tag: {{ tagname }}{% endblock %}
+{% block content %}
+    {% include "bookmark_list.html" %}
+{% endblock %}
