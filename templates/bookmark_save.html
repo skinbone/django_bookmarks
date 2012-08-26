@@ -1,9 +1,17 @@
 {% extends "base.html" %}
+{% block external %}
+    <link rel='stylesheet' href="{{ STATIC_URL }}css/jquery.autocomplete.css" type='text/css' />
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.bgiframe.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.autocomplete.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/tag_autocomplete.js"></script>
+{% endblock %}
+
 {% block title %}Save Bookmark{% endblock %}
 {% block head %}Save Bookmark{% endblock %}
 {% block content %}
-<form method="post" action=".">{% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="保存" />
-</form>
+{#<form method="post" action=".">{% csrf_token %}#}
+{#    {{ form.as_p }}#}
+{#    <input type="submit" value="保存" />#}
+{#</form>#}
+  {% include "bookmark_save_form.html" %}
 {% endblock %}

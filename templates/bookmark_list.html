@@ -4,6 +4,10 @@
       <li>
         <a href="{{ bookmark.link.url }}" class="title">
           {{ bookmark.title }}</a>
+          {% if show_edit %}
+              <a href="/save/?url={{ bookmark.link.url|urlencode }}"
+                 class="edit">[编辑]</a>
+          {% endif %}
         <br />
         {% if show_tags %}
           Tags:

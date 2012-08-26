@@ -10,11 +10,14 @@ urlpatterns = patterns('',
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', include(admin.site.urls)),
 
+    url(r'^ajax/tag/autocomplete/$', 'bookmarks.views.ajax_tag_autocomplete'),
+
     ### Browsing ###
     url(r'^$', 'bookmarks.views.main'),
     url(r'^user/(\w+)/$', 'bookmarks.views.user_page'),
     url(r'^tag/([^\s]+)/$','bookmarks.views.tag_page'),
     url(r'^tag/$', 'bookmarks.views.tag_cloud'),
+    url(r'^search/$', 'bookmarks.views.search_page'),
 
     ### Account Management ###
     url(r'^save/$', 'bookmarks.views.bookmark_save'),

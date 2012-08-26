@@ -16,6 +16,8 @@
   {% get_static_prefix as STATIC_PREFIX %}
   <link rel="stylesheet"  type="text/css" href="{{ STATIC_PREFIX }}css/style1.css" />
   {% endcomment %}
+  <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.js"></script>
+  {% block external %}{% endblock %}
 </head>
 
 <body>

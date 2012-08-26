@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Search Bookmarks{% endblock %}
+{% block external %}
+    <script type="text/javascript" src="{{ STATIC_URL }}js/search.js"></script>
+{% endblock %}
+
+{% block head %}Search Bookmarks{% endblock %}
+{% block content %}
+    <form id="search-form" method="get" action=".">
+        {{ form.as_p }}
+        <input type="submit" value="search" />
+    </form>
+    <p>you have entered '{{ query }}' for this search.</p>
+    <div id="search-results">
+        {% if show_results %}
+            {% include "bookmark_list.html" %}
+        {% endif %}
+    </div>
+{% endblock %}

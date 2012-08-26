@@ -1,6 +1,13 @@
 {% extends "base.html" %}
 {% block title %}{{ username }}{% endblock %}
+{% block external %}
+    <script type="text/javascript" src="{{ STATIC_URL }}js/ajax.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/bookmark_edit.js"></script>
+{% endblock %}
+
+
 {% block head %}Bookmarks for {{ username }}{% endblock %}
+
 {% block content %}
     {% include "bookmark_list.html" %}
 {% endblock %}
